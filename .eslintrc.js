@@ -10,5 +10,6 @@ module.exports = {
                 },
             },
         ],
+        "arrow-parens": [0],
     },
 };

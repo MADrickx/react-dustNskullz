@@ -1,4 +1,5 @@
 {
+    "editor.formatOnSave": true,
     "singleQuote": false,
     "tabWidth": 4,
     "trailingComma": "all",
@@ -11,5 +12,6 @@
                 "tabWidth": 2
             }
         }
-    ]
+    ],
+    "arrow-parens": [0]
 }
