@@ -33,7 +33,10 @@ const FilterText = styled.span`
     font-weight: 700;
 `;
 
-const Select = styled.select``;
+const Select = styled.select`
+    padding: 0.5rem;
+    margin: 0 1rem 0 0;
+`;
 
 const Option = styled.option``;
 
@@ -50,16 +53,34 @@ const ProductList = () => {
                     <FilterText>{"Filter Products : "}</FilterText>
                     <Select>
                         <Option selected disabled>
-                            {"Color"}
+                            {"Couleur"}
                         </Option>
                         <Option>{"Noir"}</Option>
                         <Option disabled>{"Blanc"}</Option>
                         <Option disabled>{"Rouge"}</Option>
                         <Option disabled>{"Bleu"}</Option>
                     </Select>
+                    <Select>
+                        <Option selected disabled>
+                            {"Taille"}
+                        </Option>
+                        <Option>{"XS"}</Option>
+                        <Option>{"S"}</Option>
+                        <Option>{"M"}</Option>
+                        <Option>{"L"}</Option>
+                        <Option>{"XL"}</Option>
+                        <Option>{"XXL"}</Option>
+                        <Option>{"XXXL"}</Option>
+                    </Select>
                 </Filter>
                 <Filter>
                     <FilterText>{"Sort Products : "}</FilterText>
+                    <Select>
+                        <Option selected>{"Newest"}</Option>
+                        <Option>{"Latets"}</Option>
+                        <Option>{"Prix (ascendant)"}</Option>
+                        <Option>{"Prix (descendant)"}</Option>
+                    </Select>
                 </Filter>
             </FilterContainter>
             <Products />
