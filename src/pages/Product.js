@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Annoucement from "../components/Annoucement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import {Remove, Add} from "@material-ui/icons";
+import {mobile} from "../responsive";
 
 const Container = styled.div`
     padding: 0rem;
@@ -12,6 +14,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 1rem;
     display: flex;
+    ${mobile({flexDirection: "column"})};
 `;
 
 const ImageContainer = styled.div`
@@ -22,11 +25,13 @@ const Image = styled.img`
     width: 100%;
     height: 80vh;
     object-fit: cover;
+    ${mobile({height: "40vh"})};
 `;
 
 const InfoContainer = styled.div`
     flex: 1;
     padding: 0 3rem;
+    ${mobile({padding: "1rem"})};
 `;
 
 const Title = styled.h1`
@@ -57,6 +62,7 @@ const Filter = styled.div`
 const FilterTitle = styled.span`
     font-size: 1.5rem;
     font-weight: 200;
+    ${mobile({fontSize: "1.2rem"})};
 `;
 
 const FilterColor = styled.div`
@@ -66,6 +72,7 @@ const FilterColor = styled.div`
     background-color: ${props => props.color};
     margin: 0 1rem;
     border: 1px solid lightgrey;
+    ${mobile({width: "1rem", height: "1rem", margin: "0.25rem"})};
 `;
 
 const FilterSizes = styled.select`
@@ -76,6 +83,43 @@ const FilterSizeOption = styled.option`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+`;
+
+const AddContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const AmountContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    justify-content: flex-start;
+    align-items: center;
+`;
+
+const Amount = styled.span`
+    margin: 1rem 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Button = styled.button`
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    height: 50px;
+    padding: 0 1rem;
+    box-shadow: 6px 6px 8px rgba(255, 255, 255, 0.075),
+        6px 6px 10px rgba(0, 0, 0, 0.15),
+        -6px -6px 14px rgba(255, 255, 255, 0.7),
+        -6px -6px 10px rgba(255, 255, 255, 0.5);
 `;
 
 const Product = () => (
@@ -99,8 +143,6 @@ const Product = () => (
                         <FilterTitle>{"Color"}</FilterTitle>
                         <FilterColor color={"Black"} />
                         <FilterColor color={"White"} />
-                        <FilterColor color={"Blue"} />
-                        <FilterColor color={"Red"} />
                     </Filter>
                     <Filter>
                         <FilterTitle>{"Size"}</FilterTitle>
@@ -115,6 +157,14 @@ const Product = () => (
                         </FilterSizes>
                     </Filter>
                 </FilterContainer>
+                <AddContainer>
+                    <AmountContainer>
+                        <Remove />
+                        <Amount>{"1"}</Amount>
+                        <Add />
+                    </AmountContainer>
+                    <Button>{"ADD TO CART"}</Button>
+                </AddContainer>
             </InfoContainer>
         </Wrapper>
         <Newsletter />

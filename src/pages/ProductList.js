@@ -5,6 +5,7 @@ import Annoucement from "../components/Annoucement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import {mobile} from "../responsive";
 
 const Container = styled.div`
     padding: 0rem;
@@ -26,6 +27,11 @@ const FilterContainter = styled.div`
 const Filter = styled.div`
     padding: 0rem;
     margin: 1rem;
+    ${mobile({
+        margin: "0 0.5rem",
+        display: "flex",
+        flexDirection: "column",
+    })};
 `;
 
 const FilterText = styled.span`
@@ -36,6 +42,7 @@ const FilterText = styled.span`
 const Select = styled.select`
     padding: 0.5rem;
     margin: 0 1rem 0 0;
+    ${mobile({margin: "0.5rem 0"})};
 `;
 
 const Option = styled.option``;

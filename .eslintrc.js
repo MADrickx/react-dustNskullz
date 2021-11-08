@@ -11,5 +11,6 @@ module.exports = {
             },
         ],
         "arrow-parens": [0],
+        "react/jsx-max-depth": 0,
     },
 };

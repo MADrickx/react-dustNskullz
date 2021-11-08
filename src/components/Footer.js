@@ -10,8 +10,11 @@ import {
     AlternateEmail,
     Payment,
 } from "@material-ui/icons";
+import {mobile} from "../responsive";
+
 const Container = styled.div`
     display: flex;
+    ${mobile({flexDirection: "column"})};
 `;
 
 const Left = styled.div`
@@ -24,11 +27,13 @@ const Left = styled.div`
 const Center = styled.div`
     flex: 1;
     padding: 1rem;
+    ${mobile({display: "none"})};
 `;
 
 const Right = styled.div`
     flex: 1;
     padding: 1rem;
+    ${mobile({backgroundColor: "lightgrey"})};
 `;
 
 const Title = styled.h3`
